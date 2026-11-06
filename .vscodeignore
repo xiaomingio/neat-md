@@ -1,0 +1,9 @@
+**
+!dist/**
+!LICENSE
+!MARKETPLACE.md
+!package.json
+!assets/icon.png
+dist/**/*.map
+dist/katex/fonts/*.woff
+dist/katex/fonts/*.ttf

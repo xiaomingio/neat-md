@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Purpose: Load the built webview the way VS Code does, with a recording acquireVsCodeApi stub. -->
+  <link rel="stylesheet" href="../../dist/katex/katex.min.css">
+  <link rel="stylesheet" href="../../dist/webview.css">
+  <style>
+    :root {
+      --vscode-editor-background: #ffffff; --vscode-editor-foreground: #1f2328; --vscode-panel-border: #d0d7de;
+      --vscode-focusBorder: #0969da; --vscode-textLink-foreground: #0969da; --vscode-descriptionForeground: #59636e;
+      --vscode-foreground: #1f2328; --vscode-editorWidget-background: #f8f8f8; --vscode-widget-border: #d0d7de;
+      --vscode-button-background: #0969da; --vscode-button-foreground: #fff; --vscode-button-secondaryBackground: #e5e7eb; --vscode-button-secondaryForeground: #1f2328;
+      --vscode-input-background: #fff; --vscode-input-foreground: #1f2328; --vscode-input-border: #d0d7de;
+      --vscode-menu-selectionBackground: #0969da; --vscode-menu-selectionForeground: #fff;
+    }
+  </style>
+  <script>
+    window.sent = [];
+    window.acquireVsCodeApi = () => ({ postMessage: (m) => window.sent.push(m) });
+  </script>
+</head>
+<body class="vscode-light" data-mermaid="../../dist/mermaid.min.js">
+  <div id="root"></div>
+  <script src="../../dist/webview.js"></script>
+</body>
+</html>
