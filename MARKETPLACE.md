@@ -1,3 +1,5 @@
+<img src="assets/icon.png" width="96" height="96" alt="Neat MD logo">
+
 # Neat MD - Markdown Editor
 
 English | [简体中文](MARKETPLACE.zh-CN.md)
@@ -62,3 +64,5 @@ Install the extension, then open a `.md`, `.markdown`, or `.mdown` file. If need
 ## License
 
 Licensed under [AGPL-3.0-only](LICENSE). [Source code](https://github.com/xiaomingio/neat-md).
+
+The code license does not grant trademark rights to the Neat MD name or logo. Use your own branding for a separately distributed product.

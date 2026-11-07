@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Neat MD: the family N with text lines and the Markdown down arrow. -->
+  <defs>
+    <clipPath id="n"><path d="M52 46h40l72 104V46h40v164h-40L92 106v104H52Z"/></clipPath>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="52" fill="#263445"/>
+  <path d="M52 46h40l72 104V46h40v164h-40L92 106v104H52Z" fill="#FAF8F1" stroke="#FAF8F1" stroke-width="8" stroke-linejoin="round"/>
+  <g clip-path="url(#n)" fill="none" stroke="#C9C5B9" stroke-width="2.5">
+    <path d="M52 87h152M52 128h152M52 169h152"/>
+  </g>
+  <path d="M178 50h12v16h10l-16 17-16-17h10Z" fill="#F47B20"/>
+</svg>

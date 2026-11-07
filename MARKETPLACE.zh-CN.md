@@ -1,3 +1,5 @@
+<img src="assets/icon.png" width="96" height="96" alt="Neat MD logo">
+
 # Neat MD - Markdown Editor
 
 [English](MARKETPLACE.md) | 简体中文
@@ -62,3 +64,5 @@
 ## 许可证
 
 代码采用 [AGPL-3.0-only](LICENSE)。[源代码](https://github.com/xiaomingio/neat-md)。
+
+代码许可不授予 Neat MD 名称或 Logo 的商标权。另行发布自己的产品时，请使用自己的品牌。

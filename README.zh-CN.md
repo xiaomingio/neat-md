@@ -1,3 +1,5 @@
+<img src="assets/icon.png" width="96" height="96" alt="Neat MD logo">
+
 # Neat MD - Markdown Editor
 
 [English](README.md) | 简体中文
@@ -17,7 +19,7 @@
 
 ## 安装与打开
 
-需要桌面版 VS Code 1.95 或更新版本。通过 **Extensions → Install from VSIX…** 安装 VSIX，然后打开 `.md`、`.markdown` 或 `.mdown` 文件。必要时使用 **Reopen Editor With → Neat MD**。
+需要桌面版 VS Code 1.95 或更新版本。从 [Marketplace 安装 Neat MD](https://marketplace.visualstudio.com/items?itemName=xiaomingio.neat-md)，然后打开 `.md`、`.markdown` 或 `.mdown` 文件。也可通过 **Extensions → Install from VSIX…** 安装 VSIX。必要时使用 **Reopen Editor With → Neat MD**。
 
 点击右上角按钮选择模式。编辑器标题栏的 **Reopen as Text** 可返回 VS Code 文本编辑器。
 
@@ -39,6 +41,10 @@ npm run package
 
 截图位于 `docs/images/`，运行 `npm run build && node scripts/screenshots.mjs` 更新。构建输出到 `dist/`，VSIX 输出到 `release/`。打包使用 [MARKETPLACE.md](MARKETPLACE.md) 作为插件市场介绍。
 
+通过环境变量注入 `VSCE_PAT`，运行 `npm run publish:marketplace` 发布当前已打包版本。命令会发布 `release/` 中对应版本的 VSIX，不修改版本号。
+
 ## 许可证
 
 代码采用 [GNU Affero General Public License v3.0](LICENSE)（仅第 3 版，`AGPL-3.0-only`）。
+
+代码许可不授予 Neat MD 名称或 Logo 的商标权。另行发布自己的产品时，请使用自己的品牌。

@@ -168,7 +168,8 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "vscode:prepublish": "npm run typecheck && npm run build",
     "package": "mkdir -p release && vsce package --readme-path MARKETPLACE.md --no-dependencies --githubBranch main --out release/",
-    "test:ui": "npm run build && playwright test"
+    "test:ui": "npm run build && playwright test",
+    "publish:marketplace": "node scripts/publish.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
@@ -177,8 +178,8 @@
     "@types/node": "^22.9.0",
     "@types/turndown": "5.0.6",
     "@types/vscode": "^1.95.0",
-    "@vscode/vsce": "^3.2.1",
-    "esbuild": "^0.24.0",
+    "@vscode/vsce": "^4.1.0",
+    "esbuild": "^0.28.2",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   },
@@ -199,5 +200,15 @@
     "markdown-it-footnote": "4.0.0",
     "mermaid": "12.3.0",
     "turndown": "7.2.5"
+  },
+  "icon": "assets/icon.png",
+  "homepage": "https://github.com/xiaomingio/neat-md",
+  "bugs": {
+    "url": "https://github.com/xiaomingio/neat-md/issues"
+  },
+  "overrides": {
+    "@vscode/vsce": {
+      "minimatch": "^11.0.1"
+    }
   }
 }

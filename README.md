@@ -1,3 +1,5 @@
+<img src="assets/icon.png" width="96" height="96" alt="Neat MD logo">
+
 # Neat MD - Markdown Editor
 
 English | [简体中文](README.zh-CN.md)
@@ -17,7 +19,7 @@ See the [feature guide and screenshots](MARKETPLACE.md).
 
 ## Install and open
 
-Requires desktop VS Code 1.95 or newer. Install a VSIX using **Extensions → Install from VSIX…**, then open a `.md`, `.markdown`, or `.mdown` file. Use **Reopen Editor With → Neat MD** if needed.
+Requires desktop VS Code 1.95 or newer. Install [Neat MD from the Marketplace](https://marketplace.visualstudio.com/items?itemName=xiaomingio.neat-md), then open a `.md`, `.markdown`, or `.mdown` file. You can also install a VSIX using **Extensions → Install from VSIX…**. Use **Reopen Editor With → Neat MD** if needed.
 
 Choose a mode from the top-right button. **Reopen as Text** in the editor title bar returns to VS Code's text editor.
 
@@ -39,6 +41,10 @@ npm run package
 
 Screenshots are in `docs/images/`; refresh them with `npm run build && node scripts/screenshots.mjs`. Build output goes to `dist/`, and VSIX packages go to `release/`. Packaging uses [MARKETPLACE.md](MARKETPLACE.md) as the extension overview.
 
+To publish the current packaged version, inject `VSCE_PAT` through the environment and run `npm run publish:marketplace`. This publishes the matching VSIX in `release/` without changing the version.
+
 ## License
 
 Licensed under the [GNU Affero General Public License v3.0 only](LICENSE) (`AGPL-3.0-only`).
+
+The code license does not grant trademark rights to the Neat MD name or logo. Use your own branding for a separately distributed product.
