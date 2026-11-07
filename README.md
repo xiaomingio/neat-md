@@ -1,30 +1,44 @@
 # Neat MD - Markdown Editor
 
-Edit Markdown with live preview, WYSIWYG editing, Mermaid diagrams, and KaTeX math formulas in VS Code.
+English | [简体中文](README.zh-CN.md)
+
+Edit and read Markdown in VS Code. Write with live rendering, work directly in source, or keep source and preview side by side.
 
 ## Features
 
-- **Live WYSIWYG Editing**: Typora-style instant rendering - edit markdown visually
-- **Four View Modes**: Live, Source, Source | Preview, Preview | Source
-- **Rich Syntax Support**: GFM, tables, task lists, footnotes, TOC, custom containers
-- **Mermaid Diagrams**: Flowcharts, sequence diagrams, class diagrams, state diagrams, and more
-- **Math Formulas**: KaTeX rendering for inline `$math$` and block `$$math$$`
-- **Performance Optimized**: Incremental rendering, lazy diagram loading, debounced sync
+- Five view modes: Live, Preview, Source, Source | Preview, and Preview | Source.
+- Interactive tables with cell editing, row/column actions, and drag reordering.
+- Mermaid diagrams, KaTeX math, syntax-highlighted code, task lists, footnotes, and a table of contents.
+- Image and file paste/drop, rich-text conversion, and Markdown copying.
+- Formatting shortcuts, find/replace, Undo/Redo, Save As, and unsaved-change recovery.
+- VS Code themes and an English/Simplified Chinese interface.
 
-## Usage
+See the [feature guide and screenshots](MARKETPLACE.md).
 
-1. Open any `.md`, `.markdown`, or `.mdown` file; it opens in Neat MD
-2. Pick a view mode from the button in the top-right corner (Live, Preview, Source, Source | Preview, Preview | Source). The choice applies to every Markdown file
-3. Use **Reopen as Text** in the editor title bar to switch back to the plain text editor
+## Install and open
 
-Tables are edited in place: Tab and Enter move between cells and add a column or row at the end, drag the handles to reorder rows and columns, and right-click a cell for more. Pasted images and files are saved to an `assets` folder next to the Markdown file; rich text from web pages is converted to Markdown, and copying always gives Markdown.
+Requires desktop VS Code 1.95 or newer. Install a VSIX using **Extensions → Install from VSIX…**, then open a `.md`, `.markdown`, or `.mdown` file. Use **Reopen Editor With → Neat MD** if needed.
 
-## Configuration
+Choose a mode from the top-right button. **Reopen as Text** in the editor title bar returns to VS Code's text editor.
 
-Use the settings button in the top-right corner, or **Settings > Neat MD**: attachment folder (default `assets`, `${filename}` supported), Base64 image embedding, font size, line height, content width, diagram theme, table of contents depth and interface language.
+## Development
+
+Requires Node.js and npm.
+
+```sh
+npm ci
+npm run typecheck
+npm test
+npm run build
+npx playwright install chromium --only-shell
+npm run test:ui
+npm run package
+```
+
+`src/extension.ts` registers the editor; `src/markdown.ts` renders Markdown; `src/webview/` implements editing and preview. Tests are in `tests/`, and a sample document is in `examples/`.
+
+Screenshots are in `docs/images/`; refresh them with `npm run build && node scripts/screenshots.mjs`. Build output goes to `dist/`, and VSIX packages go to `release/`. Packaging uses [MARKETPLACE.md](MARKETPLACE.md) as the extension overview.
 
 ## License
 
-AGPL-3.0-only
-
-See [LICENSE](LICENSE) for details.
+Licensed under the [GNU Affero General Public License v3.0 only](LICENSE) (`AGPL-3.0-only`).

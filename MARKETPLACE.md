@@ -1,116 +1,64 @@
 # Neat MD - Markdown Editor
 
-Edit Markdown with live preview, WYSIWYG editing, Mermaid diagrams, and KaTeX math formulas in VS Code.
+English | [简体中文](MARKETPLACE.zh-CN.md)
 
-## Features
+Edit and read Markdown in VS Code. Write with live rendering, edit source, or compare both side by side. Files stay plain Markdown.
 
-### 🎨 Four View Modes
+## Switch between five modes
 
-- **Live**: WYSIWYG editing with Typora-style instant rendering
-- **Source**: Plain text markdown editor with syntax highlighting
-- **Source | Preview**: Edit source on left, live preview on right
-- **Preview | Source**: Live preview on left, edit source on right
+Click the mode button in the top-right corner. Your choice is remembered and applies to all open Neat MD editors.
 
-### 📝 Rich Markdown Support
+| Mode | Use it to |
+| --- | --- |
+| Live | Edit with Markdown rendered as you type |
+| Preview | Read the rendered document without editing |
+| Source | Edit Markdown source with syntax highlighting |
+| Source \| Preview | Edit on the left and preview on the right |
+| Preview \| Source | Preview on the left and edit on the right |
 
-- **GitHub Flavored Markdown (GFM)**: Headers, bold, italic, strikethrough, links, images
-- **Tables**: GFM tables with alignment support
-- **Task Lists**: `- [ ]` and `- [x]` checkbox lists
-- **Code Blocks**: Syntax highlighting for 20+ languages
-- **Blockquotes**: Nested quote support
-- **Footnotes**: `[^1]` reference style footnotes
-- **Table of Contents**: Auto-generated with `[[TOC]]`
-- **Custom Containers**: Note, tip, warning, danger, info blocks
+![The view menu with all five modes](docs/images/modes.png)
 
-### 📊 Diagrams and Math
+## Write in Live mode
 
-- **Mermaid Diagrams**: Flowcharts, sequence diagrams, class diagrams, state diagrams, gantt charts, pie charts
-- **KaTeX Math**: Inline `$formula$` and block `$$formula$$` rendering
-- **Lazy Loading**: Diagrams render only when visible for better performance
+Formatting appears as you type. Move the cursor into text to reveal its Markdown syntax. Check off tasks directly in the document.
 
-### ⚡ Performance Optimized
+![Live editing with rendered Markdown](docs/images/live.png)
 
-- **Incremental Rendering**: Only changed blocks re-render
-- **Debounced Sync**: Smooth split-view updates (configurable delay)
-- **Scroll Sync**: Bidirectional scrolling between source and preview
-- **Fast Editing**: Low-latency input response
+## Edit source beside the preview
 
-### 🎯 Smart Editing
+Use either split layout to see source and rendered output together. The preview updates as you edit, and scrolling stays synchronized.
 
-- **Interactive tables**: Edit cells in place. Tab and Enter move between cells and add a column or row at the end; drag row and column handles to reorder; right-click for more
-- **Paste anything**: Images and files are saved to an `assets` folder next to your file (configurable); rich text from web pages becomes Markdown
-- **Copy as Markdown**: Copying always gives you the Markdown source
-- **Keyboard Shortcuts**: Quick formatting with `Ctrl/Cmd+B`, `Ctrl/Cmd+I`, etc.
-- **Standard Markdown**: 100% compatible - no proprietary extensions
+![Markdown source and rendered preview side by side](docs/images/split.png)
 
-## Usage
+## Work with tables
 
-1. Open any `.md`, `.markdown`, or `.mdown` file
-2. VS Code will prompt to choose an editor - select **Neat MD**
-3. Pick a view mode from the button in the top-right corner (Live, Preview, Source and two split views); your choice applies to every Markdown file. Undo and redo buttons sit next to it
+Edit cells in place. **Tab** moves across cells; **Enter** moves down. At the end, they add a column or row. Drag the handles to reorder rows and columns, or right-click a cell for insert, delete, and alignment actions. Choose **Edit as Markdown** to edit the table source.
 
-### Keyboard Shortcuts
+![An interactive Markdown table](docs/images/tables.png)
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd+B` | Bold |
-| `Ctrl/Cmd+I` | Italic |
-| `Ctrl/Cmd+E` | Inline code |
-| `Ctrl/Cmd+K` | Insert link |
-| `Ctrl/Cmd+F` | Find |
-| `Ctrl/Cmd+R` | Replace |
+## Add diagrams and math
 
-## Configuration
+Render Mermaid diagrams and KaTeX formulas (`$…$` inline or `$$…$$` blocks). In Live mode, double-click a diagram or formula to edit its source while keeping the rendered result visible below.
 
-Open the settings button next to the mode button, or **Settings > Neat MD**:
+![Rendered Mermaid diagram and KaTeX math](docs/images/diagrams-math.png)
 
-- **Attachment folder**: Where pasted images and files go (default `assets`; `${filename}` is the Markdown file name)
-- **Embed images**: Store pasted images as Base64 inside the Markdown instead
-- **Font size, line height, content width**
-- **Diagram theme**: Follow VS Code, default, neutral, dark, forest
-- **Table of contents depth** and **interface language**
+## Paste images, files, and rich text
 
-## Examples
+Paste or drop images and files to save them beside your document in an `assets` folder and insert relative links. Change the folder or embed images as Base64 in **Settings**. Pasted rich text becomes Markdown; copied content preserves Markdown syntax.
 
-### Mermaid Diagram
+## Also included
 
-```mermaid
-flowchart TD
-    A[Start] --> B{Decision}
-    B -->|Yes| C[Action]
-    B -->|No| D[End]
-```
+- Headings, links, images, lists, blockquotes, and syntax-highlighted code.
+- Footnotes, a table of contents (`[toc]`), and note/tip/info/warning/danger containers.
+- Formatting shortcuts: **Cmd/Ctrl+B** for bold, **Cmd/Ctrl+I** for italic, **Cmd/Ctrl+E** for inline code, and **Cmd/Ctrl+K** for links.
+- Find/replace with **Cmd/Ctrl+F** or **Cmd/Ctrl+R**.
+- VS Code Undo/Redo, Save, Save As, and recovery of unsaved changes.
+- Theme colors from VS Code; font size, line height, content width, diagram theme, and English/Simplified Chinese in the top-right **Settings**.
 
-### Math Formula
+## Getting started
 
-Inline: $E = mc^2$
-
-Block:
-
-$$
-\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-$$
-
-### Custom Container
-
-:::warning
-This is a warning message.
-:::
-
-## Requirements
-
-- VS Code 1.95.0 or higher
+Install the extension, then open a `.md`, `.markdown`, or `.mdown` file. If needed, choose **Neat MD** from **Reopen Editor With**. Use **Reopen as Text** in the editor title bar to return to VS Code's text editor. Requires desktop VS Code 1.95+.
 
 ## License
 
-This extension is licensed under **AGPL-3.0-only**.
-
-Source code: [https://github.com/xiaomingio/neat-md](https://github.com/xiaomingio/neat-md)
-
-## Privacy
-
-All markdown processing happens locally. No data is sent to external servers.
-
----
-
-**Enjoy editing Markdown with Neat MD!**
+Licensed under [AGPL-3.0-only](LICENSE). [Source code](https://github.com/xiaomingio/neat-md).
